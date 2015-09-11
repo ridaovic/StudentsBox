@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<!-- Mirrored from themepixels.com/demo/webpage/chain/data-tables.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 09 May 2015 14:11:44 GMT -->
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Liste des etudiants</title>
+
+        <link href="css/style.default.css" rel="stylesheet">
+        <link href="css/select2.css" rel="stylesheet" />
+        <link href="css/style.datatables.css" rel="stylesheet">
+        <link href="cdn.datatables.net/responsive/1.0.1/css/dataTables.responsive.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        
+        <header>
+            <div class="headerwrapper">
+                <div class="header-left">
+                    <a href="index.html" class="logo">
+                        <img src="images/minilogo1.png" alt="" /> 
+                    </a>
+                    <div class="pull-right">
+                        <a href="#" class="menu-collapse">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </div>
+                </div><!-- header-left -->
+                
+                <div class="header-right">
+                    
+                    <div class="pull-right">
+                        
+                    
+                        
+                        <div class="btn-group btn-group-list btn-group-notification">
+                            <a href="#" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                              <i class="fa fa-calendar"></i>
+                              <span class="badge">5</span>
+                            </a>
+                            
+                        </div><!-- btn-group -->
+
+                        <div class="btn-group btn-group-list btn-group-notification">
+                            <a href="#" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                              <i class="fa fa-bullhorn"></i>
+                              <span class="badge">13</span>
+                            </a>
+                            
+                        </div><!-- btn-group -->
+
+                        <div class="btn-group btn-group-list btn-group-notification">
+                            <a href="#" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                              <i class="fa fa-file-text-o"></i>
+                              <span class="badge">20</span>
+                            </a>
+                            
+                        </div><!-- btn-group -->
+
+                        <div class="btn-group btn-group-list btn-group-notification">
+                            <a href="#" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                              <i class="fa fa-phone"></i>
+                              <span class="badge">23</span>
+                            </a>
+                            
+                        </div><!-- btn-group -->
+                        
+                                                
+                        <div class="btn-group btn-group-option">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                              <i class="fa fa-caret-down"></i>
+                            </button>
+                            <ul class="dropdown-menu pull-right" role="menu">
+                              <li><a href="#"><i class="glyphicon glyphicon-user"></i> Afficher mon profil</a></li>
+                              <li class="divider"></li>
+                              <li><a href="#"><i class="glyphicon glyphicon-log-out"></i>Déconnexion</a></li>
+                            </ul>
+                        </div><!-- btn-group -->
+                        
+                    </div><!-- pull-right -->
+                    
+                </div><!-- header-right -->
+                
+            </div><!-- headerwrapper -->
+        </header>
+        <br>
+        <br>
+        
+        <section>
+            <div class="mainwrapper">
+                <div class="leftpanel">
+                    <div class="media profile-left">
+                        <a class="pull-left profile-thumb" href="profile.html">
+                            <img class="img-circle" src="images/photos/user1.png" alt="">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">Rhanim Rida</h4>
+                            <small class="text-muted">Webmaster</small>
+                        </div>
+                    </div><!-- media -->
+                    
+                    <h5 class="leftpanel-title">Navigation</h5>
+                    <ul class="nav nav-pills nav-stacked">
+                        
+                        <li class="parent"><a href="#"><i class="fa fa-tachometer"></i> <span>Administrateurs</span></a>
+                            <ul class="children">
+                                <li><a href="administrateurs.html">Liste des administrateurs</a></li>
+                                <li class="active"><a href="ajouter_administrateur.html">Ajouter administrateur</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="parent active"><a href="#"><i class="fa fa-graduation-cap"></i> <span>Etudiants</span></a>
+                            <ul class="children">
+                                <li class="active"><a href="#">Liste des etudiants</a></li>
+                                <li><a href="ajouter_etudiant.html">Ajouter etudiant</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="parent"><a href="#"><i class="fa fa-suitcase"></i> <span>Salles</span></a>
+                            <ul class="children">
+                                <li><a href="salles.html">Liste des salles</a></li>
+                                <li><a href="ajouter_salles.html">Ajouter salle</a></li>
+                            </ul>
+                        </li>
+                        
+                        
+                        <li><a href="reservations.html"><span class="pull-right badge">5</span><i class="fa fa-calendar"></i> <span>Reservation</span></a></li>
+
+
+                        <li><a href="reclamations.html"><span class="pull-right badge">13</span><i class="fa fa-bullhorn"></i> <span>Reclamations</span></a></li>
+
+
+                        <li><a href="documents.html"><span class="pull-right badge">20</span><i class="fa fa-file-text-o"></i> <span>Documents</span></a></li>
+
+
+                        <li><a href="plaintes.html"><span class="pull-right badge">5</span><i class="fa fa-phone"></i> <span>Plaintes</span></a></li>
+                        
+
+                    </ul>
+                    
+                </div><!-- leftpanel -->
+                
+                <div class="mainpanel">
+                    <div class="pageheader">
+                        <div class="media">
+                            <div class="pageicon pull-left">
+                                <i class="fa fa-th-list"></i>
+                            </div>
+                            <div class="media-body">
+                                <ul class="breadcrumb">
+                                    <li><a href="#"><i class="glyphicon glyphicon-home"></i></a></li>
+                                    <li><a href="#">Tables</a></li>
+                                    <li>Data Tables</li>
+                                </ul>
+                                <h4>Data Tables</h4>
+                            </div>
+                        </div><!-- media -->
+                    </div><!-- pageheader -->
+                    
+                    <div class="contentpanel">
+                       
+                        <div class="panel panel-primary-head">
+                            
+                            
+                            <table id="basicTable" class="table table-striped table-bordered responsive">
+                                <thead class="">
+                                    <tr>
+                                        <th>Identifiant</th>
+                                        <th>Nom</th>
+                                        <th>Prenom</th>
+                                        <th>Adresse</th>
+                                        <th>Date de naissance</th>
+                                        <th>Email</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                         
+                                <tbody>
+                                    <tr>
+                                        <td># 1</td>
+                                        <td>Rhanim</td>
+                                        <td>Rida</td>
+                                        <td>hey el falah</td>
+                                        <td>1992/01/31</td>
+                                        <td>rida.rhanim@gmail.com</td>
+                                        <td><i class="fa fa-thumbs-o-up blue"></i></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td># 1</td>
+                                        <td>Rhanim</td>
+                                        <td>Rida</td>
+                                        <td>hey el falah</td>
+                                        <td>1992/01/31</td>
+                                        <td>rida.rhanim@gmail.com</td>
+                                        <td><i class="fa fa-thumbs-o-down rouge"></i></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td># 1</td>
+                                        <td>Rhanim</td>
+                                        <td>Rida</td>
+                                        <td>hey el falah</td>
+                                        <td>1992/01/31</td>
+                                        <td>rida.rhanim@gmail.com</td>
+                                        <td><i class="fa fa-thumbs-o-down rouge"></i></td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td># 1</td>
+                                        <td>Rhanim</td>
+                                        <td>Rida</td>
+                                        <td>hey el falah</td>
+                                        <td>1992/01/31</td>
+                                        <td>rida.rhanim@gmail.com</td>
+                                        <td><i class="fa fa-thumbs-o-down rouge"></i></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td># 32</td>
+                                        <td>Rhanim</td>
+                                        <td>Rida</td>
+                                        <td>hey el falah</td>
+                                        <td>1992/01/31</td>
+                                        <td>rida.rhanim@gmail.com</td>
+                                        <td><i class="fa fa-thumbs-o-up blue"></i></span></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td># 1</td>
+                                        <td>Rhanim</td>
+                                        <td>Rida</td>
+                                        <td>hey el falah</td>
+                                        <td>1992/01/31</td>
+                                        <td>rida.rhanim@gmail.com</td>
+                                        <td><i class="fa fa-thumbs-o-down blue"></i></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td># 32</td>
+                                        <td>Rhanim</td>
+                                        <td>Rida</td>
+                                        <td>hey el falah</td>
+                                        <td>1992/01/31</td>
+                                        <td>rida.rhanim@gmail.com</td>
+                                        <td><i class="fa fa-thumbs-o-down rouge"></i></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td># 1</td>
+                                        <td>Rhanim</td>
+                                        <td>Rida</td>
+                                        <td>hey el falah</td>
+                                        <td>1992/01/31</td>
+                                        <td>rida.rhanim@gmail.com</td>
+                                        <td><i class="fa fa-thumbs-o-up blue"></i></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td># 32</td>
+                                        <td>Rhanim</td>
+                                        <td>Rida</td>
+                                        <td>hey el falah</td>
+                                        <td>1992/01/31</td>
+                                        <td>rida.rhanim@gmail.com</td>
+                                        <td><i class="fa fa-thumbs-o-up blue"></i></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td># 1</td>
+                                        <td>Rhanim</td>
+                                        <td>Rida</td>
+                                        <td>hey el falah</td>
+                                        <td>1992/01/31</td>
+                                        <td>rida.rhanim@gmail.com</td>
+                                        <td><i class="fa fa-thumbs-o-up blue"></i></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td># 32</td>
+                                        <td>Rhanim</td>
+                                        <td>Rida</td>
+                                        <td>hey el falah</td>
+                                        <td>1992/01/31</td>
+                                        <td>rida.rhanim@gmail.com</td>
+                                        <td><i class="fa fa-thumbs-o-up blue"></i></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- panel -->
+                        
+                        <br />
+                        
+                       
+                        
+                    </div><!-- contentpanel -->
+                </div><!-- mainpanel -->
+            </div><!-- mainwrapper -->
+        </section>
+
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/jquery-migrate-1.2.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/modernizr.min.js"></script>
+        <script src="js/pace.min.js"></script>
+        <script src="js/retina.min.js"></script>
+        <script src="js/jquery.cookies.js"></script>
+        
+        <script src="js/jquery.dataTables.min.js"></script>
+        <script src="cdn.datatables.net/plug-ins/725b2a2115b/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+        <script src="cdn.datatables.net/responsive/1.0.1/js/dataTables.responsive.js"></script>
+        <script src="js/select2.min.js"></script>
+
+        <script src="js/custom.js"></script>
+        <script>
+            jQuery(document).ready(function(){
+                
+                jQuery('#basicTable').DataTable({
+                    responsive: true
+                });
+                
+            });
+            
+          
+        </script>
+
+    </body>
+
+
+</html>

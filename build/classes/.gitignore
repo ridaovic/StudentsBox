@@ -1,0 +1,8 @@
+/controller/
+/dao/
+/entity/
+/hibernate.cfg.xml
+/messages.properties
+/messages_en.properties
+/service/
+/test/
