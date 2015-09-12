@@ -102,9 +102,9 @@ public class ServicesController {
 	 }
 	
 	
-	@RequestMapping(value = "/add-reclamation/{sujet}/{contenu}/{type}", method = RequestMethod.GET)
+	@RequestMapping(value = "/add-reclamation/{sujet}/{contenu}/{type}/{etudiant}", method = RequestMethod.GET)
 	@ResponseBody
-	public ReclamationEntity addReclamation(@PathVariable String sujet,@PathVariable String type,@PathVariable String contenu) 
+	public ReclamationEntity addReclamation(@PathVariable String sujet,@PathVariable String type,@PathVariable String contenu,@PathVariable Integer etudiant) 
 	{	
 		ReclamationEntity r=new ReclamationEntity();
 		r.setSujet(sujet);
@@ -115,7 +115,7 @@ public class ServicesController {
 	
 		
 		r.setAdmin(administrateurManager.getAdministrateurById(5));
-		r.setEtudiant(etudiantManager.getEtudiantById(3));
+		r.setEtudiant(etudiantManager.getEtudiantById(etudiant));
 		
 		reclamationManager.addReclamation(r);
 		return r;
@@ -126,8 +126,8 @@ public class ServicesController {
 	//------------------- Plaint ------------------------------------------------
 	
 	@RequestMapping(value = "plaints" , method = RequestMethod.GET)
-	 public  @ResponseBody  List<PlaintEntity> getAllPlaints() {
-	  List<PlaintEntity> plaints=plaintManager.getAllPlaints();
+	 public  @ResponseBody  List<PlaintEntity> getAllPlaintsVisible() {
+	  List<PlaintEntity> plaints=plaintManager.getAllPlaintsVisible();
 	  return plaints;
 	 }
 	
@@ -139,9 +139,9 @@ public class ServicesController {
 	 }
 	
 	
-	@RequestMapping(value = "/add-plaint/{sujet}/{contenu}/{type}", method = RequestMethod.GET)
+	@RequestMapping(value = "/add-plaint/{sujet}/{contenu}/{type}/{etudiant}", method = RequestMethod.GET)
 	@ResponseBody
-	public PlaintEntity addPlaint(@PathVariable String sujet,@PathVariable String type,@PathVariable String contenu) 
+	public PlaintEntity addPlaint(@PathVariable String sujet,@PathVariable String type,@PathVariable String contenu,@PathVariable Integer etudiant) 
 	{	
 		PlaintEntity p=new PlaintEntity();
 		p.setSujet(sujet);
@@ -152,7 +152,7 @@ public class ServicesController {
 	
 		
 		p.setAdmin(administrateurManager.getAdministrateurById(5));
-		p.setEtudiant(etudiantManager.getEtudiantById(3));
+		p.setEtudiant(etudiantManager.getEtudiantById(etudiant));
 		
 		plaintManager.addPlaint(p);
 		return p;
@@ -168,15 +168,22 @@ public class ServicesController {
 	  return reservations;
 	 }
 	
+	
+	@RequestMapping(value = "reservations/{id}" , method = RequestMethod.GET)
+	 public  @ResponseBody  List<ReservationEntity> getMesReservations(@PathVariable Integer id) {
+	  List<ReservationEntity> reservations=reservationManager.getMesReservations(id);
+	  return reservations;
+	 }
+	
 	@RequestMapping(value = "reservation/{id}", method = RequestMethod.GET)
 	 public @ResponseBody ReservationEntity getReservation(@PathVariable Integer id) {
 		ReservationEntity r=reservationManager.getReservationById(id);
 	  return r;
 	 }
 	
-	@RequestMapping(value = "/add-reservation/{debut}/{fin}/{salle}", method = RequestMethod.GET)
+	@RequestMapping(value = "/add-reservation/{debut}/{fin}/{salle}/{etudiant}", method = RequestMethod.GET)
 	@ResponseBody
-	public ReservationEntity addReservation(@PathVariable java.util.Date debut,@PathVariable java.util.Date fin,@PathVariable Integer salle) 
+	public ReservationEntity addReservation(@PathVariable java.util.Date debut,@PathVariable java.util.Date fin,@PathVariable Integer salle,@PathVariable Integer etudiant) 
 	{	
 		ReservationEntity r=new ReservationEntity();
 		r.setDebut(debut);
@@ -185,8 +192,9 @@ public class ServicesController {
 		r.setNotification(false);
 		r.setStatut(false);
 		
+		r.setEtudiant(etudiantManager.getEtudiantById(etudiant));
 		r.setAdmin(administrateurManager.getAdministrateurById(5));
-		r.setEtudiant(etudiantManager.getEtudiantById(3));
+		
 		
 		reservationManager.addReservation(r);
 		return r;
@@ -203,11 +211,35 @@ public class ServicesController {
 	  return documents;
 	 }
 	
+	@RequestMapping(value = "documents/{id}" , method = RequestMethod.GET)
+	 public  @ResponseBody  List<DocumentEntity> getMesDocuments(@PathVariable Integer id) {
+	  List<DocumentEntity> documents=documentManager.getMesDocuments(id);
+	  return documents;
+	 }
+	
 	@RequestMapping(value = "document/{id}", method = RequestMethod.GET)
 	 public @ResponseBody DocumentEntity getDocument(@PathVariable Integer id) {
 		DocumentEntity d=documentManager.getDocumentById(id);
 	  return d;
 	 }
+	
+	@RequestMapping(value = "/add-document/{sujet}/{contenu}/{etudiant}", method = RequestMethod.GET)
+	@ResponseBody
+	public DocumentEntity addDocument(@PathVariable String sujet,@PathVariable String contenu,@PathVariable Integer etudiant) 
+	{	
+		DocumentEntity d=new DocumentEntity();
+		d.setSujet(sujet);
+		d.setContenu(contenu);
+		d.setNotification(false);
+		d.setDisponibilite(false);
+		d.setLien("");
+		
+		d.setAdmin(administrateurManager.getAdministrateurById(5));
+		d.setEtudiant(etudiantManager.getEtudiantById(etudiant));
+		
+		documentManager.addDocument(d);
+		return d;
+	}
 	
 	
 ////------------------- Salles ------------------------------------------------

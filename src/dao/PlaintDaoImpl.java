@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import entity.PlaintEntity;
+import entity.ReclamationEntity;
 
 @Repository
 public class PlaintDaoImpl implements PlaintDAO  {
@@ -26,6 +27,15 @@ public class PlaintDaoImpl implements PlaintDAO  {
 		
 		return this.sessionFactory.getCurrentSession().createQuery("from PlaintEntity").list();
 	}
+	
+	
+	@Override
+	public List<PlaintEntity> getAllPlaintsVisible() {
+		
+		return this.sessionFactory.getCurrentSession().createQuery("from PlaintEntity WHERE visibilite=1 ORDER BY date DESC").list();
+	}
+	
+	
 
 	@Override
 	public void deletePlaint(Integer plaintId) {

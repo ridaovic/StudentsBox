@@ -27,6 +27,12 @@ public class ReservationManagerImpl implements ReservationManager {
 	public List<ReservationEntity> getAllReservations() {
 		return reservationDAO.getAllReservations();
 	}
+	
+	@Override
+	@Transactional
+	public List<ReservationEntity> getMesReservations(Integer etudiantId) {
+		return reservationDAO.getMesReservations(etudiantId);
+	}
 
 	@Override
 	@Transactional

@@ -27,6 +27,15 @@ public class DocumentDaoImpl implements DocumentDAO  {
 		
 		return this.sessionFactory.getCurrentSession().createQuery("from DocumentEntity").list();
 	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<DocumentEntity> getMesDocuments(Integer etudiantId) {
+		
+		return this.sessionFactory.getCurrentSession().createQuery("from DocumentEntity where etudiant="+etudiantId).list();
+	}
+	
+	
 
 	@Override
 	public void deleteDocument(Integer documentId) {

@@ -27,6 +27,13 @@ public class ReservationDaoImpl implements ReservationDAO  {
 		
 		return this.sessionFactory.getCurrentSession().createQuery("from ReservationEntity").list();
 	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ReservationEntity> getMesReservations(Integer etudiantId) {
+		
+		return this.sessionFactory.getCurrentSession().createQuery("from ReservationEntity where etudiant= "+etudiantId).list();
+	}
 
 	@Override
 	public void deleteReservation(Integer reservationId) {

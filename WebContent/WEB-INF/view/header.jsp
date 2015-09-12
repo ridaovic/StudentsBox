@@ -198,7 +198,7 @@
                         
 
 						<%if(Lien.isCurrent(request.getRequestURL().toString(), "documents")){ %>
-                            	<li class='active'><a href='#'><c:choose><c:when test="${nbr[0]>0}"><span class="pull-right badge">${ nbr[2] }</span></c:when></c:choose><i class='fa fa-file-text-o'></i> <span>Documents</span></a></li>
+                            	<li class='active'><a href='#'><c:choose><c:when test="${nbr[2]>0}"><span class="pull-right badge">${ nbr[2] }</span></c:when></c:choose><i class='fa fa-file-text-o'></i> <span>Documents</span></a></li>
                           <% } else { %>
                             	<li><a href='documents'><c:choose><c:when test="${nbr[2]>0}"><span class="pull-right badge">${ nbr[2] }</span></c:when></c:choose><i class='fa fa-file-text-o'></i> <span>Documents</span></a></li>
                          <% } %>

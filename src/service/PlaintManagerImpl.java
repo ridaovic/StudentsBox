@@ -27,6 +27,13 @@ public class PlaintManagerImpl implements PlaintManager {
 	public List<PlaintEntity> getAllPlaints() {
 		return plaintDAO.getAllPlaints();
 	}
+	
+	
+	@Override
+	@Transactional
+	public List<PlaintEntity> getAllPlaintsVisible() {
+		return plaintDAO.getAllPlaintsVisible();
+	}
 
 	@Override
 	@Transactional

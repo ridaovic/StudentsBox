@@ -8,6 +8,7 @@ public interface DocumentManager {
 	public void addDocument(DocumentEntity reclamation);
 	public void editeDocument(DocumentEntity reclamation);
     public List<DocumentEntity> getAllDocuments();
+    public List<DocumentEntity> getMesDocuments(Integer etudiantId);
     public DocumentEntity getDocumentById(Integer documentId);
     public void deleteDocument(Integer documentId);
     public void disponibiliteDocument(Integer documentId);

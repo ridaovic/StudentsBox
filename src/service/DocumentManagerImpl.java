@@ -27,6 +27,12 @@ public class DocumentManagerImpl implements DocumentManager {
 	public List<DocumentEntity> getAllDocuments() {
 		return documentDAO.getAllDocuments();
 	}
+	
+	@Override
+	@Transactional
+	public List<DocumentEntity> getMesDocuments(Integer etudiantId) {
+		return documentDAO.getMesDocuments(etudiantId);
+	}
 
 	@Override
 	@Transactional
